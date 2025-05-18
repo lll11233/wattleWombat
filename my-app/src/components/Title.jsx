@@ -1,10 +1,10 @@
 import { useState } from 'react'
-
 import './test.css'
 
 const userName = localStorage.getItem('userName') || 'Guest'
 const userNameInput = localStorage.getItem('userNameInput') || 'Guest'
-function titleScreen() {
+
+export default function TitleScreen({ onLoad }) {
 
   return (
     <>
@@ -14,11 +14,19 @@ function titleScreen() {
           Welcome back {userName}
         </p>
       </div>
-        <button className="button" onClick={() => continueLoading()}>
+        <button className="button" 
+          onClick={onLoad}>
             Press Button to Continue
         </button>
+        
     </>
+    
   )
 }
 
-export default titleScreen
+
+
+
+
+
+
